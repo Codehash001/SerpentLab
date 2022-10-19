@@ -129,7 +129,7 @@ useEffect(() => {
           <div className="z-1 md:max-w-3xl w-full bg-black/75 filter  py-4 rounded-md px-2 md:px-10 flex flex-col items-center
             bg-gray-800 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 border-2 border-gray-100 backdrop-saturate-150">
             <h1 className="font-Righteous uppercase font-bold text-3xl md:text-4xl text-brand-02 bg-clip-text mt-3">
-            {paused ? 'Paused' : isWlMint ? 'Whitelisted Sale' : 'Public Sale'} </h1>
+            {paused ? 'Paused' : isPublicSale ? 'isPublicSale' : 'Whitelisted-Sale'} </h1>
 
             <h3 className="text-sm text-gray-100 tracking-widest">
             {walletAddress
@@ -209,7 +209,7 @@ useEffect(() => {
                     <div className="flex items-center space-x-3">
                     <p>
                         {Number.parseFloat(paused ? '0.00' : isWlMint && EligbleForFreeMint ? config.wlcost*(mintAmount-1) : isWlMint && !EligbleForFreeMint ? config.wlcost*mintAmount : config.publicSalePrice*mintAmount).toFixed(
-                          2
+                          4
                         )}{' '}
                         ETH
                       </p>{' '}
